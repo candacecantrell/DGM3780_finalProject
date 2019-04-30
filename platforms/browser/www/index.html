@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>24 hr Pinata Delivery</title>
+</head>
+
+<body>
+
+        <section id="homeScreen" data-role="page"> 
+        <header data-role="header" data-position="fixed">
+            <h1>Home</h1>
+        </header>
+        <h1>24 Hr Pinata Delivery</h1>
+        <img src="img/heroImage3.jpg" class="banner"/>
+        <a href="#pinataPage" data-transition="slidefade" class="ui-btn ui-corner-all pinataBtn">Order a Pinata</a>
+
+        <div data-role="collapsible" data-collapsed="false">
+    <h4>Our Locations</h4>
+    <ul data-role="listview">
+        <li><a href="#nyPage" data-transition="pop">New York City, NY</a></li>
+        <li><a href="#">Portland, OR</a></li>
+        <li><a href="#">Phoenix, AZ</a></li>
+    </ul>
+</div>
+
+
+<p class="homeText">We offer Pinata Delivery Services 24 hours a day and 365 days a year! Simply pick your perfect pinata and we'll take care of the rest!</p>
+
+    <footer data-role="footer" data-position="fixed">
+        <h4>© 24 hr Piñata Delivery</h4>
+        <p>(897)097-8754</p>
+    </footer>
+    </section>
+
+
+            <section id="nyPage" data-role="page"> 
+                <header data-role="header" data-position="fixed">
+            <h1>New York City Shop</h1>
+            <a href="#homeScreen" class="ui-btn-left" data-transition="pop">Home</a>
+        </header>
+        <h1>24 Hr Pinata Delivery</h1>
+        <img src="img/storefront.jpg" class="banner"/>
+
+        <p class="homeText">Church-key lorem twee cornhole waistcoat, sed brooklyn labore food truck fanny pack williamsburg poutine jean shorts you probably haven't heard of them tofu. Retro four dollar toast cred keffiyeh gluten-free pug artisan raw denim. Crucifix ugh PBR&B chia actually godard exercitation venmo squid velit subway tile nisi authentic. Jean shorts fam chicharrones lumbersexual tote bag. Deserunt messenger bag jean shorts ethical offal succulents.
+
+Marfa semiotics DIY synth raclette migas before they sold out esse mlkshk prism meditation culpa quinoa hot chicken. Esse ut vexillologist 8-bit knausgaard butcher snackwave taiyaki dreamcatcher migas ugh listicle whatever. Iceland franzen do YOLO, iPhone yr lorem elit culpa godard tumblr skateboard occupy mixtape tumeric. Dreamcatcher fingerstache tilde ipsum wolf try-hard coloring book hella, man bun shaman est succulents.</p>
+
+
+
+    <footer data-role="footer" data-position="fixed">
+        <h4>© 24 hr Piñata Delivery</h4>
+        <p>(897)097-8754</p>
+    </footer>
+    </section>
+
+        <section id="formPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <a href="#pinataPage" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-btn-icon-left ui-icon-carat-l ui-corner-all" data-transition="pop">back</a>
+            <h1>Order Your Pinata</h1>
+         </div>
+
+         <div class="ui-content">
+             <form method="get" action="">
+
+                <div class="ui-field-contain">
+                 <label for="username">Name:</label>
+                 <input type="text" name="username" id="username" value="" placeholder="Your Name" />
+                 </div>
+
+                 <div class="ui-field-contain">
+                     <label for="address">Delivery Address: </label>
+                     <input type="text" name="address" id="address" value="" placeholder="Your Address">
+                 </div>
+
+                 
+<div class="selectDelivery">
+<fieldset data-role="controlgroup">
+    <legend>Delivery:</legend>
+    <p>(Must be within 30 miles of a shop location)</p>
+        <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
+        <label for="radio-choice-1">Rush Delivery-24hr($30)</label>
+        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
+        <label for="radio-choice-2">3 day Delivery($15)</label>
+        <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
+        <label for="radio-choice-3">7 day Delivery($10)</label>
+        <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4">
+        <label for="radio-choice-4">Store Pickup(Free)</label>
+        
+</fieldset>
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Pickup Location:</legend>
+        <input type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked">
+        <label for="radio-choice-c">New York City, NY</label>
+        <input type="radio" name="radio-choice-b" id="radio-choice-d" value="grid">
+        <label for="radio-choice-d">Portland, OR</label>
+        <input type="radio" name="radio-choice-b" id="radio-choice-e" value="gallery">
+        <label for="radio-choice-e">Phoenix, AZ</label>
+</fieldset>
+</div>
+<button class="ui-shadow ui-btn ui-corner-all">Proceed to Payment</button>
+             </form>
+         </div>
+
+         <footer data-role="footer" data-position="fixed">
+        <h4>© 24 hr Piñata Delivery</h4>
+        <p>(897)097-8754</p>
+        <p>Location: 93 Addison St. 
+Howard Beach, NY 11414</p>
+    </footer>
+        
+    </section>
+
+    <section id="pinataPage" data-role="page">
+                <header data-role="header" data-position="fixed">
+            <h1>Pinatas</h1>
+            <a href="#homeScreen" class="ui-btn-left" data-transition="pop">Home</a>
+        </header>
+
+        <div class="pinataList">
+<ul data-role="listview" data-inset="true">
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata1.jpg">
+    <h2>LLAMA PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata2.jpg">
+    <h2>FLAMINGO PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata3.jpg">
+    <h2>UNICORN PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata4.jpg">
+    <h2>FORTNITE-LLAMA PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata5.jpg">
+    <h2>DINOSAUR PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata6.jpg">
+    <h2>PINEAPPLE PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata7.jpg">
+    <h2>CACTUS PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+    <li><a href="#formPage" data-transition="slidefade">
+        <img src="img/pinata8.jpg">
+    <h2>PANDA PINATA</h2>
+    <p>Reprehenderit keffiyeh before they sold out pitchfork heirloom retro cornhole mixtape.</p></a>
+    </li>
+</ul>
+</div>
+<div>
+    <label for="file">Custom Pinata</label>
+    <p>Upload an Image of what you're looking for</p>
+<input type="file" name="file" id="file" value="">
+<button class="ui-shadow ui-btn ui-btn-icon-right ui-corner-all ui-icon-carat-r">Order Custom Pinata</button>
+</div>
+<footer data-role="footer" data-position="fixed">
+        <h4>© 24 hr Piñata Delivery</h4>
+        <p>(897)097-8754</p>
+    </footer>
+    </section>
+    
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
